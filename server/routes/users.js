@@ -11,13 +11,8 @@ const log = console.log;
 /* MODULE INITS */
 const express = require('express');
     const router = express.Router();
-const pgp = require('pg-promise')();
-    const connection = {
-      host: 'localhost',
-      port: 5432,
-      database: 'facebook_db',
-    };
-    const db = pgp(connection);
+const db = require('../db.js');
+
 
 
 /* ROUTES */
