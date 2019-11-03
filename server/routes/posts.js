@@ -31,10 +31,17 @@ const getUsers = (req, res, next) => {
   }
   db.any(insertQuery, req.params.user_id)
     .then(data => {
-        res.json({
-            status: "ff6 SUCCESS music plays",
-            payload: data
-        });
+        if (data.length === 0) {
+          res.status(404).json({
+              status: "ff6 FAIL gameover music plays",
+              message: "no results found"
+          });
+        } else {
+          res.json({
+              status: "ff6 SUCCESS music plays",
+              payload: data
+          });
+        }
     })
     .catch(err => {
       res.json({
