@@ -9,19 +9,46 @@
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    <script src="./index.js" type="text/javascript"></script>
    <title>Pg-promise Lab | Joseph P. Pasaoa</title>
+   <link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
 <body>
 
-   <h2>Add New User</h2>
-   <form id="addUserForm">
-      <p>First Name: <input type="text" id='firstNameInput'></p>
-      <p>Last Name: <input type="text" id='lastNameInput'></p>
-      <p>Age: <input type="number" id='ageInput'></p>
-      <button>Submit</button>
-   </form> 
-   <h2>All users</h2>
-   <ul id="usersList">
-   </ul>
+   <div id="flex-base">
+
+      <div id="navBar">
+         <h1>PGP.Book</h1>
+         <a href="">
+            <img src="./icons/006-newsfeed.svg" alt="newsfeed" class="nav" />
+            <label>Feed</label>
+         </a>
+         <a href="">
+            <img src="./icons/004-comment.svg" alt="post history" class="nav" />
+            <label>Your Posts</label>
+         </a>
+         <a href="">
+            <img src="./icons/011-add.svg" alt="create post" class="nav" />
+            <label>New Post</label>
+         </a>
+      </div>
+      
+      <div id="slate">
+         <h2>Feed</h2>
+         <ul id="liststage"><li><span>Test</span></li></ul>
+         <div id="vert-hr"></div>
+      </div>
+      
+      <!-- 
+      <form id="addUserForm">
+         <p>First Name: <input type="text" id='firstNameInput'></p>
+         <p>Last Name: <input type="text" id='lastNameInput'></p>
+         <p>Age: <input type="number" id='ageInput'></p>
+         <button>Submit</button>
+      </form>  -->
+      <!-- <h2>All users</h2>
+      <ul id="usersList">
+      </ul> -->
+
+   </div>
 
 </body>
 </html>

@@ -18,7 +18,7 @@ const cors = require('cors')
 
 /* SERVER INIT */
 app.listen(port, () => {
-  log(`JoeyServer is now up, running, and other things-ing on ${port}. Zug zug.`);
+  log(`JoeyServer is now up, running, and other things-ing on port ${port}. Zug zug.`);
 });
 
 

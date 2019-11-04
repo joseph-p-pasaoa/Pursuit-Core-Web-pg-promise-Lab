@@ -51,16 +51,17 @@ const getUsers = (req, res, next) => {
   });
 }
 
-const addUser = (req, res, next) => {
+const addPost = (req, res, next) => {
   const insertQuery = `
-    INSERT INTO users (firstName, lastName, age) VALUES
-      ($1, $2, $3);
+    INSERT INTO post (poster_id, body) VALUES
+      ($1, $2);
     `;
-  db.none(insertQuery, [req.body.firstName, req.body.lastName, req.body.age]);
+  db.none(insertQuery, [req.body.user_id, req.body.content]);
   res.json({
       status: "ff6 SUCCESS music plays",
-      message: "user created",
-      submitted: req.body
+      message: "post created",
+      owner: req.body.user_id,
+      submitted: req.body.content
   });
 }
 
@@ -68,7 +69,7 @@ const addUser = (req, res, next) => {
 /* ROUTES */ // GO ES5 GO!
 router.get('/all', getUsers);
 router.get('/:user_id', getUsers);
-router.post('/register', addUser); // SHOULD NOT PREVENT MULTIPLE IDENTICAL NAMES
+router.post('/register', addPost); // SHOULD NOT PREVENT MULTIPLE IDENTICAL NAMES
 
 
 module.exports = router;
